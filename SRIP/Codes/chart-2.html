@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	axisX: {
+		title:"X-axis",
+		lineThickness: 6,
+		minimum: -1.1,
+		maximum: 1.1
+	},
+	axisY:{
+		title: "Y-axix",
+		lineThickness: 8,
+		minimum: -1.1,
+		maximum: 1.1
+	},
+	data: [{
+		type: "scatter",
+		toolTipContent: "<span style=\"color:blue \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axix:</b></span> {y} ",
+		name: "Class-1",
+		showInLegend: true,
+		dataPoints: [
+			{ x: .23, y: .33 },
+			
+		]
+	},
+	{
+		type: "scatter",
+		name: "Class-2",
+		showInLegend: true, 
+		toolTipContent: "<span style=\"color:red \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axix:</b></span> {y} ",
+		dataPoints: [
+			{ x: .19, y: -.25 },
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 100%; width: 100%;">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</body>
+</html>
