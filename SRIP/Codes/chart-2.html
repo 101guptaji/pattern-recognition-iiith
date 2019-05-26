@@ -7,9 +7,7 @@ window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
-	title:{
-	text:"Pattern Recognition: Experiment 6- MLE: Learning the classifier from data"
-	},
+	
 	axisX: {
 		title:"X-axis",
 		lineThickness: 2,
@@ -51,14 +49,26 @@ chart.render();
 <title>Pattern Recognition</title>
 </head>
 <body>
-<div id="chartContainer" style="height: 30em; width:50em">
+<h1>Pattern Recognition: Experiment 6- MLE: Learning the classifier from data</h1>
+<div id="chartContainer" style="float:left;height: 30em; width:40em; border:1px solid black;">
 </div>
-<div>Add class</div>
-<button id="addclass1" >Add class 1</button>  
+
+<br>
+<div>Distribution Function</div>
+<div style="border:1px solid skyblue; padding:10px 50px 50px 10px">Select Distribution Function</div>
+<br>
+<div>Mark Points</div>
+<div style="border:1px solid skyblue; padding:10px 50px 50px 10px"><pre style="text-align:center;">Class 1       			Class 2</pre>
+</div>
+<br>
+<div style="border:1px solid skyblue; padding:10px 50px 50px 10px">Add data<br>
+<button id="addclass1" style="text-align:right" >Add class 1</button>  
 <button id="addclass2">Add class 2</button>
 <button id="clear">Clear</button>
-</br>
+<br>
+<br>
 <button id="mle">Calculate MLE</button>
 <button id="markall">Mark All</button>
+</div>
 </body>
 </html>
