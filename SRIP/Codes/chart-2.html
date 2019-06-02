@@ -2,74 +2,23 @@
 <html>
 <head>  
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> 
-<script type="text/javascript">
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	
-	axisX: {
-		title:"X-axis",
-		lineThickness: 2,
-		minimum: -1.1,
-		maximum: 1.1
-	},
-	axisY:{
-		title: "Y-axis",
-		lineThickness: 2,
-		minimum: -1.1,
-		maximum: 1.1
-	},
-	data: [{
-		type: "scatter",
-		toolTipContent: "<span style=\"color:blue \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
-		name: "Class-1",
-		showInLegend: true,
-		dataPoints: [
-			{ x: .23, y: .330 },
-			
-		]
-	},
-	{
-		type: "scatter",
-		name: "Class-2",
-		showInLegend: true, 
-		toolTipContent: "<span style=\"color:red \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
-		dataPoints: [
-			{ x: .19, y: .200 },
-			
-		]
-	}]
-});
-chart.render();
-
-}
-
+<script type="text/javascript" src="layout.js">
 </script>
 <title>Pattern Recognition</title>
-<style>
-table {
-border:1px solid skyblue;
-border-spacing: 10px;
-width:50%;
-padding:0px 100px 10px 0px;
-}
-th {
-border-spacing: 50px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="chart.css">
+
 </head>
 <body>
 <h1>Pattern Recognition: Experiment 6- MLE: Learning the classifier from data</h1>
-<div id="chartContainer" style="float:left;height: 30em; width:40em; border:1px solid black;">
+<div id="chartContainer" >
 </div>
 
 <br>
 <div>Distribution Function</div>
-<div style="border:1px solid skyblue; padding:10px 50px 50px 10px">Select Distribution Function
-<select name="distribution" style="float:right;background-color:lightskyblue;">
-<option value="Gaussian">Gaussian/Normal Distribution</option>
-<option value="uniform">Uniform Distribution</option>
+<div class="dist" >Select Distribution Function
+<select name="distribution" >
+<option value="Gaussian" onselect="gauss()" >Gaussian/Normal Distribution</option>
+<option value="uniform" onselect="uniform()" >Uniform Distribution</option>
 </select>
 </div>
 <br>
@@ -82,37 +31,37 @@ border-spacing: 50px;
 </tr>
 <tr>
 <th>Mean</th>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
+<td class="mean1" ></td>
+<td class="mean1"></td>
+<td class="mean1"></td>
+<td class="mean1"></td>
 </tr>
 <tr>
 <th>Covariance</th>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
-<td style="border:1px solid gray;width:50px;"></td>
+<td class="covar1"></td>
+<td class="covar1"></td>
+<td class="covar1"></td>
+<td class="covar1"></td>
 </tr>
 <tr>
 <th></th>
-<td style="border:1px solid gray;width:50px;height:15px;"></td>
-<td style="border:1px solid gray;width:50px;height:15px;"></td>
-<td style="border:1px solid gray;width:50px;height:15px;"></td>
-<td style="border:1px solid gray;width:50px;height:15px;"></td>
+<td class="covar2"></td>
+<td class="covar2"></td>
+<td class="covar2"></td>
+<td class="covar2"></td>
 </tr>
 </table>
 
 <br>
 <div>Add data</div>
-<div style="border:1px solid skyblue; padding:10px 10px 10px 700px">
-<button id="addclass1" >Add class 1</button>  
-<button id="addclass2">Add class 2</button>
-<button id="clear">Clear</button>
+<div class="data1" >
+<button id="addclass1" onclick="class1active()">Add class 1</button>  
+<button id="addclass2" onclick="class2active()">Add class 2</button>
+<button id="clear" onclick="clear()" >Clear</button>
 <br>
 <br>
-<button id="mle">Calculate MLE</button>
-<button id="markall">Mark All</button>
+<button id="mle" onclick="MLE()" >Calculate MLE</button>
+<button id="markall" onclick="markall()" >Mark All</button>
 </div>
 </body>
 </html>

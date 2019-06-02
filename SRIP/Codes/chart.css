@@ -1,0 +1,40 @@
+#chartContainer {
+	float:left;
+	height: 30em; 
+	width:40em; 
+	border:1px solid black;
+}
+.dist {
+	border:1px solid skyblue; 
+	padding:10px 50px 50px 10px;
+}
+select {
+	float:right;
+	background-color:skyblue;
+}
+table {
+border:1px solid skyblue;
+border-spacing: 10px;
+width:50%;
+padding:0px 100px 10px 0px;
+}
+th {
+border-spacing: 50px;
+}
+.mean1{
+	border:1px solid gray;
+	width:50px;
+}
+.covar1 {
+	border:1px solid gray;
+	width:50px;
+}
+.covar2 {
+	border:1px solid gray;
+	width:50px;
+	height:15px;
+}
+.data1 {
+	border:1px solid skyblue; 
+	padding:10px 10px 10px 700px;
+}
