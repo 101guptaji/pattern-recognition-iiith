@@ -21,7 +21,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		name: "Class-1",
 		showInLegend: true,
 		dataPoints: [
-			{ x: .23, y: .33 },
+			{ x: 0.23, y:0.33 },
 			
 		]
 	},
@@ -31,7 +31,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		showInLegend: true, 
 		toolTipContent: "<span style=\"color:red \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
 		dataPoints: [
-			{ x: .19, y: .2 },
+			{ x: 0.19, y: 0.2 },
 			
 		]
 	}]
