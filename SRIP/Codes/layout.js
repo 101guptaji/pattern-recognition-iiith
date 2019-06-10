@@ -1,6 +1,6 @@
 window.onload = function () {
 
-global var chart = new CanvasJS.Chart("chartContainer", {
+var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	
 	axisX: {
@@ -8,22 +8,22 @@ global var chart = new CanvasJS.Chart("chartContainer", {
 		lineThickness: 2,
 		minimum: -1.1,
 		maximum: 1.1,
-		split: 0.25
+		interval: 0.25
 	},
 	axisY:{
 		title: "Y-axis",
 		lineThickness: 2,
 		minimum: -1.1,
 		maximum: 1.1,
-		split: 0.1
+		interval: 0.1
 	},
 	data: [{
 		type: "scatter",
-		toolTipContent: "<span style=\"color:blue \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
+		Legend: "<span style=\"color:blue \"><b>{name}</b></span>",
 		name: "Class-1",
 		showInLegend: true,
 		dataPoints: [
-			{ x: 0.23, y:0.33 },
+			{ x: 0.23, y:null },
 			
 		]
 	},
@@ -31,26 +31,14 @@ global var chart = new CanvasJS.Chart("chartContainer", {
 		type: "scatter",
 		name: "Class-2",
 		showInLegend: true, 
-		toolTipContent: "<span style=\"color:red \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
+		Legend: "<span style=\"color:red \"><b>{name}</b></span>",
 		dataPoints: [
-			{ x: 0.19, y: 0.2 },
+			{ x: 0.19, y: null },
 			
 		]
 	}]
 });
 chart.render();
 
-
-function class1active() {
-	
-	var length = chart.options.data.dataPoints.length;
-	chart.options.data.type: "scatter",
-	chart.options.data.toolTipContent: "<span style=\"color:blue \"><b>{name}</b></span><br/><b> X-axis:</b> {x}<br/><b> Y-axis:</b></span> {y} ",
-	chart.options.data.name: "Class-1",
-	chart.options.data.showInLegend: true,
-	chart.options.data.dataPoints.push({x: 0.25, y: -0.25});
-	chart.render();
-
-	};
 
 }
